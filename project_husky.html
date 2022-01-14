@@ -80,10 +80,10 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>PROJECT BAYIEEEMAX</h2>
+                    <h2>PROJECT HUSKY</h2>
                     <ol>
                         <li><a href="index.html">Home</a></li>
-                        <li>Projects Bayieeemax</li>
+                        <li>Projects Husky</li>
                     </ol>
                 </div>
 
@@ -98,30 +98,60 @@
                 <div class="portfolio-details-container">
 
                     <div class="owl-carousel portfolio-details-carousel">
-                        <img src="assets/img/Baymax.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/FOT/11.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/HUSKY/depoismb.jpeg" class="img-fluid" alt="">
+                        <img src="assets/img/HUSKY/depoisamcl.jpeg" class="img-fluid" alt="">
+                        <img src="assets/img/HUSKY/depoisgm.jpeg" class="img-fluid" alt="">
+                        <img src="assets/img/HUSKY/depoismb.jpeg" class="img-fluid" alt="">
 
                     </div>
 
                     <div class="portfolio-info">
                         <h3>Project information</h3>
                         <ul>
-                            <li><strong>Category</strong>: Robot</li>
-                            <li><strong>Function</strong>: Autonomous robot capable of assisting health workers.</li>
-                            <li><strong>Project date</strong>: 2021- 2024</li>
-                            <li><strong>Project URL</strong>: <a href="https://ieeecimatec.github.io/project-bayieeemax/">https://ieeecimatec.github.io/project-bayieeemax/</a></li>
+                            <li><strong>Category</strong>: Simulation</li>
+                            <li><strong>Goal</strong>: Simulate the Husky robot navigation as described in the ROS tutorial.</li>
+                            <li><strong>Project date</strong>: 2021- 2021</li>
+                            <li><strong>Project URL</strong>: <a href="http://wiki.ros.org/Robots/Husky">http://wiki.ros.org/Robots/Husky</a></li>
                         </ul>
                     </div>
 
                 </div>
 
                 <div class="portfolio-description">
-                    <h2>PROJECT BAYIEEEMAX</h2>
+                    <h2>PROJECT HUSKY</h2>
                     <p>
-                        The project consists of the construction of an autonomous robot capable of assisting health agents in the screening process by measuring parameters of the patient's health status, such as blood pressure, oxygenation and temperature and recording them
-                        in the respective patient files. The robot will display questions on an LCD screen and will also issue them through a loudspeaker and receive the patient's answers through voice commands. During the execution of the project, a
-                        model will be built in a 3D modeling software for the robot's body for later 3D printing. In addition, a printed circuit board will be developed responsible for interconnecting the sensors, actuators and controller, as well as
-                        rectifying the input voltage in order to make it available for charging the batteries. Finally, the robot's operating logic will be implemented through the ROS (Robot Operating System) framework.
+                        Husky is a mid-sized robot development platform. Its large payload capacity and power systems accommodate a wide variety of payloads, customized to meet research needs. Stereo cameras, LIDAR, GPS, IMUs, manipulators and more can be added to the UGV by
+                        our integration experts. The Husky's rugged construction and high-torque power train can take your research where no other robot can go. Husky is fully ROS compatible with community driven open source code and examples.
                     </p>
+                    <h3>MOVE BASE </h3>
+                    <p>
+                        After all the configuration and installation of the Husky packages found in the repository href=https://github.com/husky/husky, the move-base node was executed in which a command will be sent to the Husky robot that will try to reach the sent position
+                        by deviating from the obstacles and if it enters a position where it is locked, it performs recovery behaviors to continue the path sent.
+                        <BR>
+                        <BR> To execute the move-base node, three commands are needed: the first starts the simulation environment the gazebo, the second the rviz viewer and the third the move-base demo.
+                        <BR>
+                        <BR> With all the movement commands already configured and the rviz and gazebo windows already open, the movement is done by the mouse, and you can also use the keyboard by the teleop-twist-keyboard command or by remote control.
+                    </p>
+                    <h3>AMCL </h3>
+                    <p>The Husky amcl Tutorial shows how the move-base is used so amcl gets a laser based map that needs to be activated in the robot description found in the repository itself after activation the laser scans and transforms into messages
+                        that generate position estimates.
+                        <BR>
+                        <BR> It is possible to see that, unlike the base move, the Husky can have a much greater viewing range, the all formed by the map and the laiser highlights those that are closer.
+                    </p>
+                    <h3>GMAPPING</h3>
+                    <p>After executing the slam-gmapping node it will be taken to the topic sensor-msgs/LaserScan messages and build a map from the laser data and positions collected by the husky.
+                        <BR>
+                        <BR> The difference from Gmapping is the SLAM that locates and maps the environment simultaneously, as can be seen when the Husky is locating to walk on the map, it also builds the map.
+                    </p>
+                    <h3>FRONTIER-EXPLORATION</h3>
+                    <p>The Frontier-exploration package provides a costmap-2d that provides an implementation of a 2D cost map that takes in world sensor data, builds a 2D or 3D occupancy grid from the data, and client actionlib that provides a standardized
+                        interface with tasks.
+                        <BR>
+                        <BR> As the robot moves, you should see the gray static map grow. Occasionally, the gmapping algorithm will relocate the robot, causing a discrete map jump. When the exploration goal is complete, you will see a message written DONE
+                        in the terminal window.
+                    </p>
+
                 </div>
 
             </div>

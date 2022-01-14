@@ -80,10 +80,10 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>PROJECT BAYIEEEMAX</h2>
+                    <h2>PROJECT WEBOTS</h2>
                     <ol>
                         <li><a href="index.html">Home</a></li>
-                        <li>Projects Bayieeemax</li>
+                        <li>Projects Webots</li>
                     </ol>
                 </div>
 
@@ -98,30 +98,53 @@
                 <div class="portfolio-details-container">
 
                     <div class="owl-carousel portfolio-details-carousel">
-                        <img src="assets/img/Baymax.jpg" class="img-fluid" alt="">
-
+                        <img src="assets/img/FOT/12.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/WEBOTS/webots.png" class="img-fluid" alt="">
+                        <img src="assets/img/WEBOTS/mapa.png" class="img-fluid" alt="">
+                        <img src="assets/img/WEBOTS/gif.gif" class="img-fluid" alt="">
                     </div>
 
                     <div class="portfolio-info">
                         <h3>Project information</h3>
                         <ul>
-                            <li><strong>Category</strong>: Robot</li>
-                            <li><strong>Function</strong>: Autonomous robot capable of assisting health workers.</li>
-                            <li><strong>Project date</strong>: 2021- 2024</li>
-                            <li><strong>Project URL</strong>: <a href="https://ieeecimatec.github.io/project-bayieeemax/">https://ieeecimatec.github.io/project-bayieeemax/</a></li>
+                            <li><strong>Category</strong>: Simulation</li>
+                            <li><strong>Function</strong>: Develop an autonomous navigation system.</li>
+                            <li><strong>Project date</strong>: 2021- 2021</li>
+                            <li><strong>Project URL</strong>: <a href="https://github.com/marcellabecker/desafiorobotica">https://github.com/marcellabecker/desafiorobotica</a></li>
                         </ul>
                     </div>
 
                 </div>
 
                 <div class="portfolio-description">
-                    <h2>PROJECT BAYIEEEMAX</h2>
+                    <h2>PROJECT WEBOTS</h2>
                     <p>
-                        The project consists of the construction of an autonomous robot capable of assisting health agents in the screening process by measuring parameters of the patient's health status, such as blood pressure, oxygenation and temperature and recording them
-                        in the respective patient files. The robot will display questions on an LCD screen and will also issue them through a loudspeaker and receive the patient's answers through voice commands. During the execution of the project, a
-                        model will be built in a 3D modeling software for the robot's body for later 3D printing. In addition, a printed circuit board will be developed responsible for interconnecting the sensors, actuators and controller, as well as
-                        rectifying the input voltage in order to make it available for charging the batteries. Finally, the robot's operating logic will be implemented through the ROS (Robot Operating System) framework.
+                        Webots is an open source, cross-platform desktop application used to simulate robots.It provides a complete development environment to model, program and simulate robots.It is designed for professional use and is widely used in industry, education and
+                        research.
+                        <BR>
+                        <BR> The robot used was the Pionner which uses its 16 pre-installed distance sensors to obtain information from the world in all directions. And an additional sensor: the luminosity sensor that tracks the local irradiance and sends
+                        a signal to the robot when it reads more than 750 W/m2, which means it is close enough to the floor lamp to trigger the STOP.
+
                     </p>
+                    <h3>CONTROLE</h3>
+                    <p>
+                        The robot's navigation on the map is based on a 4-state machine that determines whether it should move forward, turn left, right or stop when you reach your end goal.
+                        <BR>
+                        <BR> Thus, the division was made in four cases, they are:
+                        <BR> FORWARD: It walks forward and if there is an obstacle ahead it starts making the decision to turn in any direction to avoid it.
+                        <BR> LEFT: Turn left until object detection is no longer possible;
+                        <BR> RIGHT: Turn right until object detection is no longer possible;
+                        <BR> STOP: When the light sensor detects the configured amount of luminosity (in this case 750 W / m2), the robot must stop.
+                    </p>
+                    Each of the 16 distance sensors included in the Pionner are found in the challengecontroller.c robot control file. And contain weight values ​​for each wheel, which are based on the position of the sensor on the robot and show how its reading influences
+                    thetwo-wheel behavior. In addition, the weight value helps in decision making, because if the reading of any sensor dropsbelow the defined minimum value, it means that the robot is close to an obstacle and must change direction using
+                    one of the above cases.In the end, it was used to determine the robot's behavior at all values ​​of weight on each wheel times a speed factor,which is dependent on both the sensor reading ratio and the minimum distance value.
+                    <BR>
+                    <BR>Also part of the control is the light sensor that was added to complete the challenge, this sensor activates the STOP state when it detects a brightness greater than 750 W/m2 and thus the challenge is completed.
+                    <BR>
+                    <BR>The photos show the pioneer starting, arriving in the luminous area and stopping at the correct time, thus completing the proposed challenge.
+
+
                 </div>
 
             </div>
